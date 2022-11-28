@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-around;
+}
+
+.box-left {
+  display: flex;
+  width: 1000px;
+  height: 640px;
+  background-color: skyblue;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.list-food {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 230px;
+  background-color: green;
+  justify-content: space-around;
+  align-items: center;
+}
+
+img {
+  width: 180px;
+  height: 120px;
+}
+
+.text-foodInfo {
+  background-color: orange;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  line-height: 25px;
+}
+
+.box-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+.list-shoppingbasket {
+  width: 300px;
+  height: 400px;
+  background-color: chartreuse;
+}
+.box-total {
+  width: 300px;
+  height: 60px;
+  background-color: magenta;
+}
+
+

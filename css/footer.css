@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+}
+
+.btn-cancel,
+.btn-confirm {
+  width: 120px;
+  text-align: center;
+  line-height: 60px;
+  border: none;
+}
+
+.btn-cancel {
+  background-color: red;
+  color: white;
+}
+
+.btn-confirm {
+  background-color: blue;
+  color: white;
+}

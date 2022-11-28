@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 31px;
+}
+
+.header-title {
+  width: 500px;
+  height: 120px;
+  background-color: aquamarine;
+  font-size: 70px;
+  text-align: center;
+  
+}
+
+.header-center {
+    display: flex;
+}
+
+canvas {
+    position: absolute;
+}
+
+.list-menu {
+  display: flex;
+  width: 500px;
+  height: 70px;
+  background-color: firebrick;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.btn-menu {
+  width: 100px;
+  height: 40px;
+}
+
+.btn-home {
+  width: 300px;
+  height: 120px;
+  background-color: blue;
+}
