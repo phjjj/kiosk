@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kiosk</title>
+    <link rel="stylesheet" href=../../css/container.css> <link rel="stylesheet"
+    href=../../css/header.css> <link rel="stylesheet" href=../../css/footer.css>
+  </head>
+  <body>
+    <script type></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/firebase.js"></script>
+
+    <script defer src="../../js/face-api.min.js"></script>
+    <script defer src="../../js/face-detect.js"></script>
+    <div class="header">
+      <div class="header-left">
+        <div class="header-title">메 뉴 선 택</div>
+        <div class="list-menu">
+          <button class="btn-menu" onclick="location.href='orderscreen.html'">떡볶이</button>
+          <button class="btn-menu">김 밥</button>
+          <button class="btn-menu" onclick="location.href='orderscreen-3.html'">라 면</button>
+          <button class="btn-menu" onclick="location.href='orderscreen-4.html'">기 타</button>
+        </div>
+      </div>
+      <div class="header-center" id="box-video">
+        <video autoplay muted id="video" width="300" height="200"></video>
+      </div>
+      <div class="header-right">
+        <div class="btn-home">처음으로</div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="box-left">
+        <!-- <div class="list-food">
+          <img src="../../img/dduck.png" />
+          <div class="text-foodInfo">
+            <div class="text-foodName">국물떡볶이</div>
+            <div class="text-foodPrice">1000원</div>
+          </div>
+        </div> -->
+      </div>
+      <div class="box-right">
+        <div class="list-shoppingbasket"></div>
+        <div class="box-total">합계: 원</div>
+        <div class="footer">
+          <button class="btn-cancel">전체취소</button>
+          <button class="btn-confirm">완료</button>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="../../js/gimbab.js"></script>
+  </body>
+</html>
