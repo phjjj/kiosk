@@ -41,13 +41,14 @@ img {
 .box-right {
   display: flex;
   flex-direction: column;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 .list-shoppingbasket {
   width: 300px;
   height: 400px;
   background-color: chartreuse;
+  overflow: auto;
 }
 
 .list-order {
@@ -58,6 +59,9 @@ img {
   padding: 0px 10px;
   height: 50px;
   margin-bottom: 10px;
+}
+span {
+  width: 70px;
 }
 
 .box-total {
