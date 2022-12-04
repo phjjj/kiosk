@@ -12,4 +12,20 @@ gimbab.get().then((result) => {
         </div>`;
     $(".box-left").append(gimbabList);
   });
+  const listFood = document.querySelectorAll(".list-food");
+
+  for (let i = 0; i < listFood.length; i++) {
+    listFood[i].addEventListener("click", function (event) {
+      const name = document.getElementsByClassName("text-foodName");
+      const price = document.getElementsByClassName("text-foodPrice");
+      const orderList = `<div class="list-order">
+            <span >${name[i].innerText}</span>
+            
+            </button>
+            <span>${price[i].innerText}</span>
+          </div>`;
+
+      $(".list-shoppingbasket").append(orderList);
+    });
+  }
 });

@@ -5,20 +5,22 @@
 }
 
 .header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 500px;
   height: 120px;
   background-color: aquamarine;
   font-size: 70px;
-  text-align: center;
   
 }
 
 .header-center {
-    display: flex;
+  display: flex;
 }
 
 canvas {
-    position: absolute;
+  position: absolute;
 }
 
 .list-menu {
@@ -37,7 +39,12 @@ canvas {
 }
 
 .btn-home {
+  display: flex;
   width: 300px;
   height: 120px;
   background-color: blue;
+  font-size: 50px;
+  color: white;
+  justify-content: center;
+  align-items: center;
 }

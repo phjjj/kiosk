@@ -13,7 +13,6 @@ tteokBokkiData.get().then((result) => {
         </button>`;
     $(".box-left").append(tteokBokkiList);
   });
-
   const listFood = document.querySelectorAll(".list-food");
 
   for (let i = 0; i < listFood.length; i++) {
@@ -22,45 +21,31 @@ tteokBokkiData.get().then((result) => {
       const price = document.getElementsByClassName("text-foodPrice");
       const orderList = `<div class="list-order">
             <span >${name[i].innerText}</span>
-            <button class="btn-minus" onclick='count("minus")'>
-              <i  class="fa-solid fa-minus"></i>
-            </button>
-            <div id="num-count">0</div>
-            <button class="btn-plus"onclick='count("plus")'>
-              <i  class="fa-solid fa-plus"></i>
+            
             </button>
             <span>${price[i].innerText}</span>
+            <button class="btn-delete" >
+            <i class="fa-solid fa-x"></i>
+            </button>
           </div>`;
 
       $(".list-shoppingbasket").append(orderList);
-      // const listOrder = document.querySelectorAll(".list-order");
-      // for (let i = 0; i < listOrder.length; i++) {
-      //   listOrder[i].addEventListener("click", function (event) {
-      //     const numCount = document.getElementById("num-count");
-      //     let number = numCount.innerText;
-          
-      //   });
-      // }
+        
+      const newFood = { name: name[i].innerText, price: price[i].innerText };
+      shoppingBaskets.push(newFood);
+      localStorage.setItem("foods", JSON.stringify(shoppingBaskets));
     });
   }
 });
 
-const numCount = document.getElementById("num-count");
-function count(type) {
-  // 결과를 표시할 element
+const shoppingBaskets = [];
+
+$(".list-shoppingbasket").on("click", ".btn-delete", function () {
+  const name = document.getElementsByClassName("text-foodName");
+  const price = document.getElementsByClassName("text-foodPrice");
+  //list안의 btnDel을 선택
+  $(this).parent().remove(); //this(btnDel)의 부모(td)의 부모(tr)를 삭제
   
-  const numCount = document.getElementById("num-count");
-  // 현재 화면에 표시된 값
+});
 
-  let number = numCount.innerText;
-
-  // 더하기/빼기
-  if (type === "plus") {
-    number = parseInt(number) + 1;
-  } else if (type === "minus" && number !== "0") {
-    number = parseInt(number) - 1;
-  }
-
-  // 결과 출력
-  numCount.innerText = number;
-}
+//아 시발... 겨우 함
