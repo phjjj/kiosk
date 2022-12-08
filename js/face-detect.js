@@ -42,6 +42,9 @@ video.addEventListener("play", () => {
         [`${faceapi.round(age, 0)} 세`],
         result.detection.box.bottomLeft
       ).draw(canvas);
+
+      console.log(Math.floor(age / 10) * 10);
+      localStorage.setItem("age", Math.floor(age / 10) * 10);
     });
-  }, 100);
+  }, 600);
 });
