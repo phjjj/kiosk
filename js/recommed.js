@@ -1,9 +1,35 @@
-const drink = db.collection("음료");
+const headTitle = document.querySelector(".header-title");
 const shoppingBasket = document.querySelector(".list-shoppingbasket");
 const storageItems = JSON.parse(localStorage.getItem("foods"));
 const total = document.querySelector(".box-total");
-const age = localStorage.getItem("age")
+
+
+
 let shoppingBasketsArr = [];
+
+ageCheck();
+
+function ageCheck() {
+  const age = localStorage.getItem("age");
+  chageToTitle(age);
+  if (age == 10) {
+    const foodData = db.collection("10대");
+    addToRecommend(foodData);
+  } else if (age == 20) {
+    const foodData = db.collection("20대");
+
+    addToRecommend(foodData);
+  } else if (age == 30) {
+    const foodData = db.collection("30대");
+    addToRecommend(foodData);
+  } else if (age == 40) {
+    const foodData = db.collection("40대");
+    addToRecommend(foodData);
+  } else if (age == 50 && age == 60) {
+    const foodData = db.collection("50대~60대");
+    addToRecommend(foodData);
+  }
+}
 
 if (storageItems) {
   storageItems.forEach((e) => {
@@ -12,37 +38,44 @@ if (storageItems) {
   });
 }
 
-drink.get().then((result) => {
-  result.forEach((doc) => {
-    const drinkList = `<button class="list-food">
-          <img src="../../img/drink.png" />
-          <div class="text-foodInfo">
-            <div class="text-foodName">${doc.data().name}</div>
+function chageToTitle(age) {
+  headTitle.innerText = age + "대 추천 메뉴";
+}
+
+function addToRecommend(foodData) {
+  foodData.get().then((result) => {
+    result.forEach((doc) => {
+      const tteokBokkiList = `<button class="list-food">
+          <img src="../../img/dduck.png" />
+          <div class="text-foodInfo" >
+            <div class="text-foodName">${doc.data().food}</div>
             <div class="text-foodPrice">${doc.data().price}원</div>
           </div>
         </button>`;
-    $(".box-left").append(drinkList);
-  });
-  const listFood = document.querySelectorAll(".list-food");
+      $(".box-left").append(tteokBokkiList);
+    });
 
-  for (let i = 0; i < listFood.length; i++) {
-    listFood[i].addEventListener("click", handleClick);
+    const listFood = document.querySelectorAll(".list-food");
 
-    function handleClick() {
-      const name = document.getElementsByClassName("text-foodName");
-      const price = document.getElementsByClassName("text-foodPrice");
+    for (let i = 0; i < listFood.length; i++) {
+      listFood[i].addEventListener("click", handleClick);
 
-      const newFood = {
-        id: Date.now(),
-        name: name[i].innerText,
-        price: price[i].innerText,
-      };
-      shoppingBasketsArr.push(newFood);
-      localStorage.setItem("foods", JSON.stringify(shoppingBasketsArr));
-      addToFood(newFood);
+      function handleClick() {
+        const name = document.getElementsByClassName("text-foodName");
+        const price = document.getElementsByClassName("text-foodPrice");
+
+        const newFood = {
+          id: Date.now(),
+          name: name[i].innerText,
+          price: price[i].innerText,
+        };
+        shoppingBasketsArr.push(newFood);
+        localStorage.setItem("foods", JSON.stringify(shoppingBasketsArr));
+        addToFood(newFood);
+      }
     }
-  }
-});
+  });
+}
 
 function addToFood(newFood) {
   const newOrder = document.createElement("div");
@@ -68,13 +101,14 @@ function addToFood(newFood) {
   newOrder.append(newFoodPrice);
   newOrder.append(button);
   shoppingBasket.append(newOrder);
-  console.log(total);
 }
 
 function deleteHandler(newOrder, e) {
   let targetId = e.target.parentElement.id;
   removePrice = parseInt(e.target.previousElementSibling.innerText);
+
   total.innerText = parseInt(total.innerText) - removePrice;
+
   shoppingBasket.removeChild(newOrder);
 
   // console.log(removePrice);

@@ -43,7 +43,7 @@ video.addEventListener("play", () => {
         result.detection.box.bottomLeft
       ).draw(canvas);
 
-      console.log(Math.floor(age / 10) * 10);
+
       localStorage.setItem("age", Math.floor(age / 10) * 10);
     });
   }, 600);

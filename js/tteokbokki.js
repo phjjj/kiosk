@@ -1,7 +1,7 @@
 const tteokBokkiData = db.collection("떡볶이");
 const shoppingBasket = document.querySelector(".list-shoppingbasket");
 const storageItems = JSON.parse(localStorage.getItem("foods"));
-const age = localStorage.getItem("age");
+
 const total = document.querySelector(".box-total");
 let shoppingBasketsArr = [];
 

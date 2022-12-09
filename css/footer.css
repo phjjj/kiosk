@@ -10,14 +10,24 @@
   text-align: center;
   line-height: 60px;
   border: none;
+  border-radius: 10px;
+  font-size: 20px;
 }
 
 .btn-cancel {
-  background-color: red;
+  background-color: #ed5564;
   color: white;
+  transition: all 0.2s;
+}
+.btn-cancel:hover {
+  background: #aa1e31;
 }
 
 .btn-confirm {
-  background-color: blue;
+  background-color: #5f9cec;
   color: white;
+}
+
+.btn-confirm:hover {
+  background-color: #2761ad;
 }

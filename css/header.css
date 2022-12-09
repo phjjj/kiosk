@@ -1,7 +1,8 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 0px 31px;
+  margin: 0px 31px;
+  background-color: white;
 }
 
 .header-title {
@@ -10,9 +11,10 @@
   justify-content: center;
   width: 500px;
   height: 120px;
-  background-color: aquamarine;
   font-size: 70px;
-  
+  color: white;
+  background-color: #0fbbd5;
+  border-radius: 30px;
 }
 
 .header-center {
@@ -25,17 +27,39 @@ canvas {
 
 .list-menu {
   display: flex;
-  width: 500px;
+  width: 600px;
   height: 70px;
-  background-color: firebrick;
+
   justify-content: space-around;
   align-items: center;
   margin-top: 10px;
 }
 
 .btn-menu {
-  width: 100px;
-  height: 40px;
+  display: block;
+  position: relative;
+  float: left;
+  width: 120px;
+  padding: 0;
+  margin: 10px 20px 10px 0;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  border-radius: 5px;
+  transition: all 0.2s;
+  background: #5DC8CD;
+  box-shadow: 0px 5px 0px 0px #1E8185;
+  border: none;
+}
+
+.btn-menu:hover {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.btn-menu.btn-menu:hover {
+  box-shadow: 0px 0px 0px 0px #1E8185;
 }
 
 .btn-home {

@@ -5,38 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kiosk</title>
+    <script defer src="../../js/face-api.min.js"></script>
+    <script defer src="../../js/face-detect.js"></script>
     <link rel="stylesheet" href=../../css/container.css> <link rel="stylesheet"
     href=../../css/header.css> <link rel="stylesheet" href=../../css/footer.css>
   </head>
   <body>
-    <script type></script>
-
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../../js/firebase.js"></script>
     <script
       src="https://kit.fontawesome.com/26033b817b.js"
       crossorigin="anonymous"
     ></script>
-    <script defer src="../../js/face-api.min.js"></script>
-    <script defer src="../../js/face-detect.js"></script>
+    <script src="../../js/firebase.js"></script>
+
     <div class="header">
       <div class="header-left">
         <div class="header-title">메 뉴 선 택</div>
         <div class="list-menu">
-          <button class="btn-menu" onclick="location.href='recommendscreen.html'">
+          <button
+            class="btn-menu"
+            type="button"
+            onclick="location.href='recommendscreen.html'"
+          >
             추천메뉴
-          <button class="btn-menu" onclick="location.href='orderscreen.html'">
+          </button>
+          <button
+            class="btn-menu"
+            type="button"
+            onclick="location.href='orderscreen.html'"
+          >
             떡볶이
           </button>
-          <button class="btn-menu">김 밥</button>
-          <button class="btn-menu" onclick="location.href='orderscreen-3.html'">
+          <button
+            class="btn-menu"
+            type="button"
+            onclick="location.href='orderscreen-2.html'"
+          >
+            김 밥
+          </button>
+          <button
+            class="btn-menu"
+            type="button"
+            onclick="location.href='orderscreen-3.html'"
+          >
             라 면
           </button>
-          <button class="btn-menu" onclick="location.href='orderscreen-4.html'">
+          <button
+            class="btn-menu"
+            type="button"
+            onclick="location.href='orderscreen-4.html'"
+          >
             기 타
           </button>
         </div>
@@ -57,7 +79,15 @@
         </div> -->
       </div>
       <div class="box-right">
-        <div class="list-shoppingbasket"></div>
+        <div class="list-shoppingbasket">
+          <!-- <div class="list-order">
+            <span>${newFood.name}</span>
+            <span>${newFood.price}</span>
+            <button class="btn-delete">
+              <i class="fa-solid fa-x"></i>
+            </button>
+          </div> -->
+        </div>
         <div class="box-total">0</div>
         <div class="footer">
           <button class="btn-cancel">전체취소</button>
@@ -65,6 +95,6 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="../../js/gimbab.js"></script>
+    <script type="text/javascript" src="../../js/recommed.js"></script>
   </body>
 </html>
