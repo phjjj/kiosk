@@ -47,7 +47,7 @@ function addToRecommend(foodData) {
   foodData.get().then((result) => {
     result.forEach((doc) => {
       const tteokBokkiList = `<button class="list-food">
-          <img src="../../img/dduck.png" />
+          <img src="../../img/${doc.data().img}" />
           <div class="text-foodInfo" >
             <div class="text-foodName">${doc.data().food}</div>
             <div class="text-foodPrice">${doc.data().price}원</div>
