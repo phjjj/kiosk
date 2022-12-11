@@ -8,6 +8,7 @@ Promise.all([
   faceapi.nets.ageGenderNet.loadFromUri("../models"),
 ]).then(startVideo());
 
+
 function startVideo() {
   navigator.mediaDevices
     .getUserMedia({ video: true })
@@ -35,6 +36,8 @@ video.addEventListener("play", () => {
     canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
     faceapi.draw.drawDetections(canvas, resizedDetections);
     faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
+    
+
 
     resizedDetections.forEach((result) => {
       const { age } = result;

@@ -53,7 +53,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #ece99d;
+
   border-radius: 15px;
 }
 
@@ -86,8 +86,12 @@ span {
 }
 
 .box-total {
-  width: 300px;
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  width: 200px;
   height: 60px;
   background-color: #eeeeee;
   border-radius: 15px;
+  text-align: center;
 }

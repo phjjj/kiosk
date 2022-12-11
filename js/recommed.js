@@ -1,7 +1,7 @@
 const headTitle = document.querySelector(".header-title");
 const shoppingBasket = document.querySelector(".list-shoppingbasket");
 const storageItems = JSON.parse(localStorage.getItem("foods"));
-const total = document.querySelector(".box-total");
+const total = document.querySelector(".text-total");
 const clearBtn = document.querySelector(".btn-cancel");
 
 clearBtn.addEventListener("click", clearAll);

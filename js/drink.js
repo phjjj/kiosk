@@ -1,7 +1,7 @@
 const drink = db.collection("음료");
 const shoppingBasket = document.querySelector(".list-shoppingbasket");
 const storageItems = JSON.parse(localStorage.getItem("foods"));
-const total = document.querySelector(".box-total");
+const total = document.querySelector(".text-total");
 const age = localStorage.getItem("age");
 const clearBtn = document.querySelector(".btn-cancel");
 

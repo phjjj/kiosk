@@ -4,7 +4,7 @@ const storageItems = JSON.parse(localStorage.getItem("foods"));
 const clearBtn = document.querySelector(".btn-cancel");
 
 clearBtn.addEventListener("click", clearAll);
-const total = document.querySelector(".box-total");
+const total = document.querySelector(".text-total");
 let shoppingBasketsArr = [];
 
 if (storageItems) {
