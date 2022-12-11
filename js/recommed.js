@@ -2,8 +2,9 @@ const headTitle = document.querySelector(".header-title");
 const shoppingBasket = document.querySelector(".list-shoppingbasket");
 const storageItems = JSON.parse(localStorage.getItem("foods"));
 const total = document.querySelector(".box-total");
+const clearBtn = document.querySelector(".btn-cancel");
 
-
+clearBtn.addEventListener("click", clearAll);
 
 let shoppingBasketsArr = [];
 
@@ -124,4 +125,15 @@ function totalToPrice(newFoodPrice) {
   sumPrice = parseInt(newFoodPrice.innerText);
 
   total.innerText = sumPrice + parseInt(total.innerText);
+}
+
+function clearAll() {
+  while (shoppingBasket.hasChildNodes()) {
+    shoppingBasket.removeChild(shoppingBasket.firstChild);
+  }
+  shoppingBasketsArr.length = 0;
+
+  localStorage.setItem("foods", JSON.stringify(shoppingBasketsArr));
+
+  total.innerText = 0;
 }

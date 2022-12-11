@@ -12,12 +12,12 @@
   border: none;
   border-radius: 10px;
   font-size: 20px;
+  transition: all 0.2s;
 }
 
 .btn-cancel {
   background-color: #ed5564;
   color: white;
-  transition: all 0.2s;
 }
 .btn-cancel:hover {
   background: #aa1e31;

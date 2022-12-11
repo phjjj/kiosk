@@ -1,7 +1,9 @@
 const tteokBokkiData = db.collection("떡볶이");
 const shoppingBasket = document.querySelector(".list-shoppingbasket");
 const storageItems = JSON.parse(localStorage.getItem("foods"));
+const clearBtn = document.querySelector(".btn-cancel");
 
+clearBtn.addEventListener("click", clearAll);
 const total = document.querySelector(".box-total");
 let shoppingBasketsArr = [];
 
@@ -92,4 +94,15 @@ function totalToPrice(newFoodPrice) {
   sumPrice = parseInt(newFoodPrice.innerText);
 
   total.innerText = sumPrice + parseInt(total.innerText);
+}
+
+function clearAll() {
+  while (shoppingBasket.hasChildNodes()) {
+    shoppingBasket.removeChild(shoppingBasket.firstChild);
+  }
+  shoppingBasketsArr.length = 0;
+
+  localStorage.setItem("foods", JSON.stringify(shoppingBasketsArr));
+
+  total.innerText = 0;
 }

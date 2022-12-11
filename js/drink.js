@@ -2,7 +2,10 @@ const drink = db.collection("음료");
 const shoppingBasket = document.querySelector(".list-shoppingbasket");
 const storageItems = JSON.parse(localStorage.getItem("foods"));
 const total = document.querySelector(".box-total");
-const age = localStorage.getItem("age")
+const age = localStorage.getItem("age");
+const clearBtn = document.querySelector(".btn-cancel");
+
+clearBtn.addEventListener("click", clearAll);
 let shoppingBasketsArr = [];
 
 if (storageItems) {
@@ -90,4 +93,15 @@ function totalToPrice(newFoodPrice) {
   sumPrice = parseInt(newFoodPrice.innerText);
 
   total.innerText = sumPrice + parseInt(total.innerText);
+}
+
+function clearAll() {
+  while (shoppingBasket.hasChildNodes()) {
+    shoppingBasket.removeChild(shoppingBasket.firstChild);
+  }
+  shoppingBasketsArr.length = 0;
+
+  localStorage.setItem("foods", JSON.stringify(shoppingBasketsArr));
+
+  total.innerText = 0;
 }
